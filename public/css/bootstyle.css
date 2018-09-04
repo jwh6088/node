@@ -1,0 +1,13 @@
+html,body{
+    background:rgb(51, 69, 73);
+}
+.firstdiv{
+    margin-bottom:20px;
+}
+.myimg{
+   width:200px;
+}
+.media:first-child{
+    margin-bottom:20px;
+    background:#ccc;
+}

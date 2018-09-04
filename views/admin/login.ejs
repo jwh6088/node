@@ -1,0 +1,62 @@
+<% include ./header-min %>
+
+<!-- Top content -->
+<div class="top-content">
+        	
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h1><strong>网站后台管理系统</strong> 登录</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>登录后台</h3>
+                            <p>输入您的账号和密码登录:</p>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form action="/admin/doLogin" method="POST" class="login-form">
+                            <div class="form-group">
+                                <label class="sr-only" for="form-username">Username</label>
+                                <input type="text" name="username" placeholder="账号" class="form-username form-control" id="form-username">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="form-password">Password</label>
+                                <input type="password" name="password" placeholder="密码" class="form-password form-control" id="form-password">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="code" placeholder="验证码" class="form-password form-control">
+                                <br>
+                                <a href="" style="display: inline;">  <img style="margin-left:200px" src="/admin/code"> </a>
+                            </div>
+                            <button type="submit" class="btn">登录</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 social-login">
+                    <h3>如果您没有权限:</h3>
+                    <div class="social-login-buttons">
+
+                        <a class="btn btn-link-2" href="/admin/reg">
+                            <i class="fa fa-twitter"></i> 申请管理员
+                        </a>
+   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<% include ./footer-min %>

@@ -1,0 +1,52 @@
+/* 自定义样式 */
+.mt10{
+  margin-top: 10px;
+}
+
+.userForm .input-group{
+  margin-top: 10px;
+}
+
+/* 发布文章页 */
+.articleAdd .input-group{
+  margin-top: 10px;
+} 
+
+.articleAdd .content{
+  margin-top: 10px;
+}
+
+.articleAdd .reset{
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+  border:none;
+  font-size: 20px;
+  color:#fff;
+  background: #09c;
+}
+.articleAdd .submit{
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+  border:none;
+  font-size: 20px;
+  color:#fff;
+  background: #09c;
+}
+
+/* 文章列表 */
+.articleList img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+}
+
+.editArticleImg{
+  width: 100%;
+}
+
+/* 左侧菜单 */
+#wrapper .newstyle{
+  background:rgb(59, 85, 110);
+}

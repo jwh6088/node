@@ -1,0 +1,31 @@
+<% include header %>
+<%itemlist1.forEach(function(val){%>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+               WARFRAME-<%=val.name%>任务攻略
+            </div>
+        </div>
+    </div>
+    <% val.articleList.forEach(function(val1){ %>
+    <div class="container">
+        <div class="media">
+            <div class="media-left media-top">
+                <a href="#">
+                <img class="media-object myimg" src="/<%=val1.imgurl%>" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <br>
+                <h4 class="media-heading"><a href="/deta/<%=val1._id%>"><%=val1.title%></a></h4>
+                <h6><span class="label label-default"><%=val1.author%></span> &nbsp; <%=val1.keywords%></h6>
+                <%=val1.description%>
+            </div>
+        </div>
+    </div>
+    <% })%>
+<%})%>
+    <div class="container">
+        <div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> 未经作者允许严禁转载</div>
+    </div>
+<% include footer %>

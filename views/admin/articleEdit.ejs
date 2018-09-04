@@ -1,0 +1,94 @@
+<% include ./header %>
+
+<!-- 引入 富文本编辑器 -->
+<script src="/ueditor/ueditor.config.js"></script>
+<script src="/ueditor/ueditor.all.min.js"></script>
+
+<!-- 路径导航 -->
+<ol class="breadcrumb">
+    <li>
+        <a href="#">文章管理</a>
+    </li>
+    <li class="active">编辑文章</li>
+</ol>
+<!-- 路径导航 END -->
+
+<!-- 发布文章 -->
+<div class="container articleAdd">
+    <!-- 修改图片 -->
+    <div class="row">
+        <div class="col-md-2">
+            <img class="editArticleImg" src="/<%= data.imgurl%>" style="margin-top: 10px;">
+        </div>
+        <div class="col-md-2">
+            <!-- 修改图片 -->
+            <form action="/admin/articleUpdateImage" method="POST" enctype="multipart/form-data">
+                <!-- 传给 控制器 做修改哪一条文章的条件 -->
+                <input type="hidden" value="<%=data._id%>" name="_id">
+                <!-- 修改图片： -->
+                <input type="file" name="imgurl">
+                <input type="submit" value="确认修改图片" style="margin-top: 10px;">
+            </form>
+            <!-- 修改图片 end -->
+        </div>
+    </div>
+    <!-- 修改文本 -->
+    <div class="row">
+        <form action="/admin/articleUpdate" method="POST">
+            <!-- 隐藏域 -->
+            <input type="hidden" value="<%=data._id%>" name="_id">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon">文章栏目</span>
+                    <select name="itemId" class="form-control">
+                        <!-- 循环栏目列表 -->
+                        <% itemlist.forEach(function(val){ %>
+                            <option  value="<%=val._id%>" <%=val._id.toString()==data.itemId?'selected':'' %> ><%=val.name%></option>
+                        <% })%>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon">文章标题</span>
+                    <input type="text" class="form-control" name="title" value="<%=data.title%>">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon"> 作 者 </span>
+                    <input type="text" class="form-control" name="author" value="<%=data.author%>">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon"> 关 键 字 </span>
+                    <input type="text" class="form-control" name="keywords" value="<%=data.keywords%>">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon">文章描述</span>
+                    <input type="text" class="form-control" name="description" value="<%=data.description%>">
+                </div>
+            </div>
+            <div class="col-md-12 content">
+                <textarea name="content" id="content"><%=data.content%></textarea>
+            </div>
+            <div class="col-md-6">
+                <input class="reset" type="reset">
+            </div>
+            <div class="col-md-6">
+                <input class="submit" type="submit">
+            </div>
+        </form>
+     </div>
+ </div>
+ 
+ <script>
+     // 实例化编辑器
+     var ue = UE.getEditor('content');
+ </script>
+
+
+<% include ./footer %>
